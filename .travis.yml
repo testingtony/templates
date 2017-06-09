@@ -1,0 +1,19 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+cache:
+  directories:
+  - $HOME/.m2
+
+sudo: required
+
+services:
+  - docker
+
+install: mvn -B dependency:resolve
+
+script:
+- mvn -B clean
+- if [ "$TRAVIS_BRANCH" = "selenium" -o "$TRAVIS_BRANCH" = "master" -o "$TRAVIS_TAG" != "" ]; then mvn -B verify; else mvn -B test; fi
