@@ -17,3 +17,8 @@ install: mvn -B dependency:resolve
 script:
 - mvn -B clean
 - if [ "$TRAVIS_BRANCH" = "selenium" -o "$TRAVIS_BRANCH" = "master" -o "$TRAVIS_TAG" != "" ]; then mvn -B verify; else mvn -B test; fi
+
+notifications:
+  slack:
+    secure: MdpRP2DcQ4l0wRobYXh9BmfFlXuTbI+4fzStUNvQBHmL4G7Q4XSGUC6kh3prPZ4pWxH52hn6ihf8f6WgwdCsXnL0uvGc/DZzgskee5YGFXX2sA23+1eLdHvkMJo+qHpCFuU76Cw98qVWRmIxBu341egPjA6GL55XRpVbNkEa5wWbvVsZAE3zBeVfMpA9a5GbfHVM3O4DQCOUEeFmMY2FqB/jeFPEFsl0NKEi1SM+TBwexYqrIOssT4GJ8iDxdYULOJXYEUKwPB1wXia4hFawVI6y3dE8qg7n3Nq4+ZKzzo18VXJzCgU85GGDE7A6+7pSeVfxQAUKY4lQCJQPDnN92M97Gx0aYr2XgL/MKMMqPdVyiqzIdLCNKx1HKGE4Ve+w33d37wJ1zF+O+82wTMUtOFRWBGnwIDxRpbyJ76xsAAPoO5q8lIv9JJfPYdWNY9SDARLa3meEZWk4E7zFZ0jAAL+XoEiGlW9zx+3WWpFfXvdOviinW21RZgj7Dh5Du0xBs9qTH2vzvjkVTksq+FncGceEilIIZ8oXeOEgyz1RSS+Xhd8bLnoxi1ZquAcGZNd3hD0ZpPLBQM97OrocYcNv6E4gke4NwLkaM3Yv8ylEW8XBaV6IlcxcsqIhMOXburKXLo7+sCZftPsSBdjjGU0Sldp9zE9SZOOSpS+619Gja1Y=
+
