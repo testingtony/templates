@@ -14,6 +14,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import static templates.selenium.utils.Buttons.*;
+
 
 public class ITTreePage {
     private static final Logger logger = LoggerFactory.getLogger(ITProfilePage.class);
@@ -44,14 +46,14 @@ public class ITTreePage {
     @Test
     public void root_has_Folder1_node() {
         Tree tree = treePage.getTree();
-        Tree subFolder = tree.folder("Folder 1");
+        Tree subFolder = tree.folder(FOLDER1);
 
         assertThat(subFolder.getTitle(), equalTo("Folder 1"));
     }
 
     @Test
     public void folder1_1_is_empty() {
-        Tree folder1 = treePage.getTree().folder("Folder 1").folder("Folder 1.1");
+        Tree folder1 = treePage.getTree().folder(FOLDER1_1);
 
         assertThat(folder1.isFolder(), is(true));
         assertThat(folder1.isTest(), is(false));
@@ -60,7 +62,7 @@ public class ITTreePage {
 
     @Test
     public void folder12_has_children() {
-        Tree folder12 = treePage.getTree().folder("Folder 1").folder("Folder 1.2");
+        Tree folder12 = treePage.getTree().folder(FOLDER1_2);
 
         assertThat(folder12.isFolder(), is(true));
         assertThat(folder12.isTest(), is(false));

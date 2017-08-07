@@ -43,6 +43,20 @@ public class Tree {
         return child;
     }
 
+    public Tree folder (HasBy title) {
+        WebElement child = root.findElement(title.getBy());
+        return new Tree(child);
+    }
+
+    public Tree folder(HasBy ... titles) {
+        Tree child = this;
+        for(HasBy title: titles) {
+            child = child.folder(title);
+        }
+        return child;
+    }
+
+
     public String getTitle() {
         return root.findElement(By.tagName("span")).getText();
     }
