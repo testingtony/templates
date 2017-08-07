@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trees</title>
+    <style>
+        .tree {
+           padding-left: 20px;
+        }
+        .test {
+           color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="tree">
+    <span>Root</span>
+    <div class="tree test"><span>Test 1</span></div>
+    <div class="tree"><span>Folder 1</span>
+        <div class="tree"><span>Folder 1.1</span></div>
+        <div class="tree"><span>Folder 1.2</span>
+            <div class="tree"><span>Folder 1.2.1</span>
+                <div class="tree test"><span>Test 1.2.1.1</span></div>
+                <div class="tree test"><span>Test 1.2.1.2</span></div>
+                <div class="tree test"><span>Test 1.2.1.3</span></div>
+            </div>
+            <div class="tree"><span>Folder 1.2.2</span></div>
+        </div>
+        <div class="tree"><span>Folder 1.2</span></div>
+    </div>
+</div>
+</body>
+</html>
